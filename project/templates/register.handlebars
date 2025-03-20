@@ -50,8 +50,13 @@
               <div class="card-body p-4">
                 <form action="/register" method="post">
                   <h1>Register</h1>
+                  {{#if message}}
+                  <div>
+                    <p>{{message}}</p>
+                  </div>
+                {{else}}
                   <p class="text-medium-emphasis">Create your account</p>
-                  
+                {{/if}}
                   <div class="input-group mb-3"><span class="input-group-text">
                       <svg class="icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
@@ -63,7 +68,9 @@
                       <svg class="icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
                       </svg></span>
-                    <input class="form-control" type="text" placeholder="Email" name="Email">
+                      <input type="email" id="Email" name="Email" required class="form-control" placeholder="example@udst.edu.qa"
+                            pattern="[a-zA-Z0-9._%+-]+@udst\.edu\.qa$" 
+                            title="Email must be in the format example@udst.edu.qa">
                   </div>
                   <div class="input-group mb-3"><span class="input-group-text">
                       <svg class="icon">
@@ -76,6 +83,12 @@
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                       </svg></span>
                     <input class="form-control" type="password" placeholder="Repeat password" name="Password2" >
+                  </div>
+                  <div class="input-group mb-4"><span class="input-group-text">
+                      <svg class="icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                      </svg></span>
+                    <input class="form-control" type="text" placeholder="Program" name="program" >
                   </div>
     
                   <button class="btn btn-block btn-success" type="submit">Create Account</button>
