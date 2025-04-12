@@ -1,0 +1,93 @@
+[
+  {
+    "Full Name": "Ahmed Al-Mansoori",
+    "Email": "87432951@udst.edu.qa",
+    "Course Code": "CS101",
+    "Course Name": "Introduction to Computer Science",
+    "Current Section": "CS101-01",
+    "Request Type": "Register for Capped Course",
+    "Reason": "Required for graduation this semester"
+  },
+  {
+    "Full Name": "Mariam Al-Thani",
+    "Email": "56321874@udst.edu.qa",
+    "Course Code": "MATH202",
+    "Course Name": "Advanced Calculus",
+    "Current Section": "MATH202-03",
+    "Request Type": "Drop Course",
+    "Reason": "Changing major, no longer required"
+  },
+  {
+    "Full Name": "Khalid Al-Sulaiti",
+    "Email": "98234567@udst.edu.qa",
+    "Course Code": "ENG105",
+    "Course Name": "Academic Writing",
+    "Current Section": "ENG105-02",
+    "Request Type": "Change Section",
+    "Reason": "Conflict with internship schedule"
+  },
+  {
+    "Full Name": "Noora Al-Kuwari",
+    "Email": "12345678@udst.edu.qa",
+    "Course Code": "BUS301",
+    "Course Name": "Business Management",
+    "Current Section": "BUS301-04",
+    "Request Type": "Register for Capped Course",
+    "Reason": "Prerequisite for advanced courses next term"
+  },
+  {
+    "Full Name": "Abdullah Al-Hajri",
+    "Email": "45678901@udst.edu.qa",
+    "Course Code": "PHY110",
+    "Course Name": "Physics Fundamentals",
+    "Current Section": "PHY110-01",
+    "Request Type": "Drop Course",
+    "Reason": "Overloaded with credits, will retake later"
+  },
+  {
+    "Full Name": "Fatima Al-Naimi",
+    "Email": "78901234@udst.edu.qa",
+    "Course Code": "CHEM115",
+    "Course Name": "General Chemistry",
+    "Current Section": "CHEM115-02",
+    "Request Type": "Change Section",
+    "Reason": "Need evening section due to work commitments"
+  },
+  {
+    "Full Name": "Mohammed Al-Ghanim",
+    "Email": "23456789@udst.edu.qa",
+    "Course Code": "ARCH201",
+    "Course Name": "Architectural Design",
+    "Current Section": "ARCH201-03",
+    "Request Type": "Register for Capped Course",
+    "Reason": "Core course for architecture major"
+  },
+  {
+    "Full Name": "Aisha Al-Mohannadi",
+    "Email": "89012345@udst.edu.qa",
+    "Course Code": "PSY210",
+    "Course Name": "Developmental Psychology",
+    "Current Section": "PSY210-01",
+    "Request Type": "Drop Course",
+    "Reason": "Medical withdrawal for the semester"
+  },
+  {
+    "Full Name": "Ali Al-Sada",
+    "Email": "34567890@udst.edu.qa",
+    "Course Code": "MECH250",
+    "Course Name": "Thermodynamics",
+    "Current Section": "MECH250-02",
+    "Request Type": "Change Section",
+    "Reason": "Prefer Dr. Smith's teaching style (Section 04)"
+  },
+  {
+    "Full Name": "Shaikha Al-Dosari",
+    "Email": "67890123@udst.edu.qa",
+    "Course Code": "DESN101",
+    "Course Name": "Graphic Design Basics",
+    "Current Section": "DESN101-04",
+    "Request Type": "Register for Capped Course",
+    "Reason": "Permission granted by department head"
+  }
+]
+
