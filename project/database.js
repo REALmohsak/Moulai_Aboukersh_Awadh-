@@ -26,7 +26,7 @@ async function addUser(userData) {
 // Retrieves a user document based on email
 async function getUserByEmail(email) {
     const db = await connectDatabase();
-    return db.collection('UserAccounts').findOne({ email });
+    return db.collection('UserAccounts').findOne({ email:email });
 }
 
 // Retrieves a user document based on name
