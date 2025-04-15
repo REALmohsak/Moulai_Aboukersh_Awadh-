@@ -576,6 +576,13 @@ app.get('/basic_request', async (req, res) => {
     try {
         // Try to get request from both active and canceled collections
         let request = await business.getRequestById(req.query.id);
+        let time = request.createdAt
+        const nextDay = new Date(time);
+        nextDay.setDate(time.getDate() + 1);
+
+        // Format to YYYY-MM-DD
+        const formattedDate = nextDay.toISOString().split('T')[0];
+        
         if (!request){
             request = await business.getCanceledById(req.query.id);
         }
@@ -590,6 +597,7 @@ app.get('/basic_request', async (req, res) => {
                 courseName: request['Course Name'],
                 currentSection: request['Current Section'],
                 requestType: request['Request Type'],
+                time :formattedDate,
                 reason: request.Reason,
                 status: request.status || 'pending'
             }
