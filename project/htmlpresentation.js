@@ -214,7 +214,7 @@ app.get('/request/', async (req, res) => {
             let note = req.body.note
             // Update request status based on action
             if (action === "approved"){
-                //business.addApproved(request._id, request)
+                business.addApproved(request._id, request)
                 console.log(`
                     -------------------------------------------------
                     TO: ${request.Email}
@@ -234,7 +234,7 @@ app.get('/request/', async (req, res) => {
                     -------------------------------------------------
                     `);
             }if (action === "rejected"){
-                //business.addRejected(request._id, request)
+                business.addRejected(request._id, request)
                 console.log(`
                     -------------------------------------------------
                     TO: ${request.Email}
@@ -254,7 +254,7 @@ app.get('/request/', async (req, res) => {
                     -------------------------------------------------
                     `);
             }if (action === "pending"){
-                //business.addPending(request._id, request)
+                business.addPending(request._id, request)
                 console.log(`
                     -------------------------------------------------
                     TO: ${request.Email}
