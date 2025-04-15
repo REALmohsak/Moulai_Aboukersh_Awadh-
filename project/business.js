@@ -148,9 +148,17 @@ async function getUserByName(username) {
  * @returns {Promise<boolean>} True if valid and exists
  */
 async function checkEmail(email) {
-    if (!email || !email.includes("@udst.edu.qa")) return false;
-    const user = await db.getUserByEmail(email);
-    return !!user; // Convert to boolean
+    if (!email || !email.includes("@udst.edu.qa") || await db.getUserByEmail(email)){
+        return false;
+    } 
+    return true; 
+}
+
+async function resetcheckEmail(email) {
+    if (await db.getUserByEmail(email)){
+        return true;
+    } 
+    return false; 
 }
 
 /**
@@ -396,13 +404,14 @@ module.exports = {
     terminateSession,
     
     // Password Reset
-    checkEmail,
+    resetcheckEmail,
     createResetPassword,
     checkResetKey,
     resetPassword,
     getDateByKey,
     
     // Requests
+    checkEmail,
     resubmitRequest,
     getFormsbYid,
     getForms,
