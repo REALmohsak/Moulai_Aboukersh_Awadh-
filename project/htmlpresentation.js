@@ -104,7 +104,7 @@ app.post('/login',  csrfProtection.verify, async (req, res) => {
         res.redirect('/dashboard');
     } else {
         // Show error message on invalid credentials
-        res.render('login', { layout: false, message: "Invalid Credentials", csrfToken: req.csrfToken() });
+        res.render('login', { layout: false, message: "Invalid Credentials", csrfToken:  res.locals.csrfToken });
     }
 });
 
@@ -400,7 +400,7 @@ app.post('/register',csrfProtection.verify, async (req, res) => {
 
     // Check if email is valid and not already registered
     let emailValid = await business.checkEmail(Email);
-    if (emailValid) {
+    if (!emailValid) {
         return res.render('register', { layout: false, message: "Invalid or already registered email!" });
     }
 
@@ -437,10 +437,11 @@ app.get('/forgot_password', (req, res) => {
  */
 app.post('/forgot_password', csrfProtection.verify, async (req, res) => {
     let email = req.body.email;
-    let checkEmail = await business.checkEmail(email);
+    let checkEmail = await business.resetcheckEmail(email);
     if (checkEmail) {
         let { resetKey, resetExpiry } = await business.createResetPassword(email);
-        console.log("http://localhost:8000/resetPassword?key=" + resetKey);
+        console.log(`Email to reset your password
+            http://localhost:8000/resetPassword?key=` + resetKey);
         res.send("<h1>The link has been sent to your email</h1>");
     } else {
         res.render('forgot_password', { layout: false, message: "The email is not registered", csrfToken:  res.locals.csrfToken });
@@ -480,7 +481,7 @@ app.post('/conform', csrfProtection.verify, async (req, res) => {
     if (password !== password2) {
         return res.render('resetpassword', { layout: false, message: "Passwords do not match!", key, csrfToken: res.locals.csrfToken });
     }
-    let isValid = await business.checkEmail(email);
+    let isValid = await business.resetcheckEmail(email);
     if (!isValid) {
         return res.render('resetpassword', { layout: false, message: "Invalid email!", csrfToken: res.locals.csrfToken });
     }
